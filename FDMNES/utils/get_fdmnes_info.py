@@ -1,10 +1,7 @@
 # get info about e_edge, e_fermi, Z from output fdmnes file
 
-from larch.io import read_ascii 
-
-# group = read_ascii("path/to/file")
-
-def read_fdmnes(group):
+def get_fdmnes_info(file):
+    group = read_ascii(file)
 
     with open(group.path) as f:
         line = f.readline()
