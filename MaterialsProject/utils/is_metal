@@ -1,12 +1,12 @@
 from pymatgen.core import Composition
 
-def is_metal_or_oxide(structure):
+def is_metal(structure):
     comp = structure.composition
     elements = comp.elements
 
-    # Check if any of the elements have a negative oxidation state,
-    # indicating the presence of a non-metal
+    # Check if any of the elements have a negative oxidation state
+    # indicating the presence of a non-metal element
     for element in elements:
         if any(oxi < 0 for oxi in element.common_oxidation_states):
-            return "Non-Metal"
-    return "Metal"
+            return False
+    return True
