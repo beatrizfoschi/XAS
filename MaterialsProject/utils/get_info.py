@@ -7,7 +7,7 @@ def get_info(material_id):
     ---------------------------------------------------------
     material(str): material_id from Materials Project
     """
-    with _MPResterLegacy("iZVT66G5iKswixmF") as mprl:
+    with _MPResterLegacy("************") as mprl:
         mpid = mprl.get_data(material_id)
         cif = mpid[0]['cif']
         icsd_ids = mpid[0]['icsd_ids']
@@ -19,7 +19,7 @@ def get_info(material_id):
 
 
 def get_cif(material_id): 
-    with _MPResterLegacy("iZVT66G5iKswixmF") as mprl:
+    with _MPResterLegacy("*************") as mprl:
         mpid = mprl.get_data(material_id)
         cif = mpid[0]['cif']
         return cif
